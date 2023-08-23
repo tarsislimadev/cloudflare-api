@@ -16,6 +16,8 @@ export class Router {
   }
 
   handle(req) {
-    return new Response('That\'s all OK!')
+    const datetime = Date.now()
+
+    return new Response(`datetime: ${datetime}`)
   }
 }

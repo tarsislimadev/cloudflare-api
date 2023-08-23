@@ -5,7 +5,7 @@ const router = new Router()
 const logger = new Logger('AppLogger')
 
 // inputs e-mail address, outputs login link by e-mail box
-router.post('/api/login', (req, res) => {
+router.post('/login', (req, res) => {
   logger.log('login', { req, res })
 
   const id = ''
@@ -13,7 +13,7 @@ router.post('/api/login', (req, res) => {
 })
 
 // input login id, outputs job creation page
-router.post('/api/publish/:id', (req, res) => {
+router.post('/publish/:id', (req, res) => {
   logger.log('publish', { req, res })
 
   const id = ''
@@ -21,7 +21,7 @@ router.post('/api/publish/:id', (req, res) => {
 })
 
 // outputs jobs list
-router.post('/api/jobs', (res, req) => {
+router.post('/jobs', (res, req) => {
   logger.log('jobs', { req, res })
 
   const list = []
@@ -29,7 +29,7 @@ router.post('/api/jobs', (res, req) => {
 })
 
 // outputs a job post
-router.post('/api/save', (res, req) => {
+router.post('/save', (res, req) => {
   logger.log('save', { req, res })
 
   const id = []
