@@ -1,6 +1,6 @@
 {
-  "name": "lively-brook-8dd4",
-  "version": "0.0.0",
+  "name": "cloudflare",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
