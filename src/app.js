@@ -8,10 +8,14 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
-import routes from './routes'
+import { CloudflareRequest, CloudflareResponse } from './libs/cloudflare/index.js'
+
+import app from './routes'
 
 export default {
-  async fetch(req) {
-    return routes.handle(req)
+  async fetch(request) {
+    const req = new CloudflareRequest(request)
+    const res = new CloudflareResponse(req)
+    return app.run(req, res).getResponse()
   }
 }

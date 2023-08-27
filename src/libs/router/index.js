@@ -15,9 +15,7 @@ export class Router {
     return this.request('*', path, fn)
   }
 
-  handle(req) {
-    const datetime = Date.now()
-
-    return new Response(`datetime: ${datetime}`)
+  run(_, res) {
+    return res
   }
 }
