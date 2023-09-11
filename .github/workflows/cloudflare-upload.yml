@@ -2,8 +2,6 @@ name: Cloudflare deploy
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '15 15 * * *'
   push:
     branches: 
       - 'main'
@@ -20,6 +18,9 @@ jobs:
         with:
           node-version: '18'
 
+      - name: NPM install
+        run: npm ci
+
       - name: Cloudflare configuration
         run: echo "CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}" > .env
         env:
@@ -29,3 +30,4 @@ jobs:
         run: npx wrangler deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
