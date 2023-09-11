@@ -1,5 +1,5 @@
-import { Router } from './libs/router/index.js'
-import { Logger } from './libs/logger/index.js'
+import { Router } from '@brtmvdl/backend'
+import { Logger } from '@brtmvdl/logger'
 
 const router = new Router()
 const logger = new Logger('AppLogger')
@@ -8,7 +8,7 @@ const logger = new Logger('AppLogger')
 router.post('/login', (req, res) => {
   logger.log('login', { req, res })
 
-  const id = ''
+  const id = Date.now()
   return res.setJSON({ id })
 })
 
@@ -31,14 +31,6 @@ router.post('/jobs', (res, req) => {
 // outputs a job post
 router.post('/save', (res, req) => {
   logger.log('save', { req, res })
-
-  const id = []
-  return res.setJSON({ id })
-})
-
-// outputs error 404 page
-router.all('*', (res, req) => {
-  logger.log('error', { req, res })
 
   const id = []
   return res.setJSON({ id })
