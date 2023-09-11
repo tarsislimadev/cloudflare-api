@@ -9,5 +9,10 @@
   "devDependencies": {
     "itty-router": "^3.0.12",
     "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@brtmvdl/backend": "^0.6.0",
+    "@brtmvdl/database": "^0.4.0",
+    "@brtmvdl/logger": "^0.1.1"
   }
 }
