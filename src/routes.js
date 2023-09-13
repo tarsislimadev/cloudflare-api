@@ -6,9 +6,9 @@ import { homeWorkout } from './api/index.js'
 const router = new Router()
 const logger = new Logger('AppLogger')
 
-router.get('/api/home-workout/challenges', async (_, res) => res.setJSON({ list: homeWorkout.challenges() }))
+router.get('/api/home-workout/challenges', (_, res) => res.setJSON({ list: homeWorkout.challenges() }))
 
-router.get('/api/home-workout/workouts', async (_, res) => res.setJSON({ list: homeWorkout.workouts() }))
+router.get('/api/home-workout/workouts', (_, res) => res.setJSON({ list: homeWorkout.workouts() }))
 
 router.get('/api/namazon/products/list', async (_, res) => {
   const list = await Promise.resolve([])
