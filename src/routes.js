@@ -6,6 +6,16 @@ import { homeWorkout } from './api/index.js'
 const router = new Router()
 const logger = new Logger('AppLogger')
 
+router.post('/api/home-workout/challenge', (req, res) => {
+  const { id } = req.json
+
+  const item = homeWorkout.challenges()
+    .map((challenge) => ({ ...challenge, workouts: challenge.workouts.map((w) => homeWorkout.workouts().find((workout) => workout.id == w)) }))
+    .find((challenge) => challenge.id === id)
+
+  return res.setJSON({ item })
+})
+
 router.get('/api/home-workout/challenges', (_, res) => {
   const list = homeWorkout.challenges().map((challenge) => ({ ...challenge, workouts: challenge.workouts.map((w) => homeWorkout.workouts().find((workout) => workout.id == w)) }))
 
