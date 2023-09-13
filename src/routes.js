@@ -1,15 +1,14 @@
 import { Router } from '@brtmvdl/backend'
 import { Logger } from '@brtmvdl/logger'
-import { Database } from '@brtmvdl/database'
 
 const router = new Router()
 const logger = new Logger('AppLogger')
 
-const db = new Database(process.env.DATABASE_URL)
+router.get('/api/namazon/products/list', async (req, res) => {
+  const list = await Promise.resolve([])
 
-db.type(Database.POSTGRESQL)
-
-router.get('/api/namazon/products/list', (req, res) => res.setJSON({ id: Date.now(), endpoint: '/api/namazon/products/list' }))
+  return res.setJSON({ id: Date.now(), endpoint: '/api/namazon/products/list', list })
+})
 
 router.post('/api/namazon/addresses/list', (req, res) => res.setJSON({ id: Date.now(), endpoint: '/api/namazon/addresses/list' }))
 
