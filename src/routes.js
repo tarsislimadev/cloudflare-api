@@ -1,18 +1,24 @@
 import { Router } from '@brtmvdl/backend'
 import { Logger } from '@brtmvdl/logger'
 
+import { homeWorkout } from './api/index.js'
+
 const router = new Router()
 const logger = new Logger('AppLogger')
 
-router.get('/api/namazon/products/list', async (req, res) => {
+router.get('/api/home-workout/challenges', async (_, res) => res.setJSON({ list: homeWorkout.challenges() }))
+
+router.get('/api/home-workout/workouts', async (_, res) => res.setJSON({ list: homeWorkout.workouts() }))
+
+router.get('/api/namazon/products/list', async (_, res) => {
   const list = await Promise.resolve([])
 
   return res.setJSON({ id: Date.now(), endpoint: '/api/namazon/products/list', list })
 })
 
-router.post('/api/namazon/addresses/list', (req, res) => res.setJSON({ id: Date.now(), endpoint: '/api/namazon/addresses/list' }))
+router.post('/api/namazon/addresses/list', (_, res) => res.setJSON({ id: Date.now(), endpoint: '/api/namazon/addresses/list' }))
 
-router.post('/api/namazon/payments/list', (req, res) => res.setJSON({ id: Date.now(), endpoint: '/api/namazon/payments/list' }))
+router.post('/api/namazon/payments/list', (_, res) => res.setJSON({ id: Date.now(), endpoint: '/api/namazon/payments/list' }))
 
 router.post('/login', (req, res) => {
   logger.log('login', { req, res })
