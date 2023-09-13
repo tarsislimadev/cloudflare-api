@@ -1,7 +1,4 @@
 name = "api"
 main = "src/app.js"
 compatibility_date = "2023-08-14"
-
-routes = [
-	{ pattern = "api.jornalisto.com", zone_name = "jornalisto.com", custom_domain = true }
-]
+node_compat = true
