@@ -6,7 +6,11 @@ import { homeWorkout } from './api/index.js'
 const router = new Router()
 const logger = new Logger('AppLogger')
 
-router.get('/api/home-workout/challenges', (_, res) => res.setJSON({ list: homeWorkout.challenges() }))
+router.get('/api/home-workout/challenges', (_, res) => {
+  const list = homeWorkout.challenges().map((challenge) => ({ ...challenge, workouts: challenge.workouts.map((w) => homeWorkout.workouts().find((workout) => workout.id == w)) }))
+
+  return res.setJSON({ list })
+})
 
 router.get('/api/home-workout/workouts', (_, res) => res.setJSON({ list: homeWorkout.workouts() }))
 
