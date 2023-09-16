@@ -1,1 +1,1 @@
-npx wrangler dev --remote
+npx wrangler dev
