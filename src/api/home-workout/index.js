@@ -2,17 +2,17 @@
 export const challenges = () => ([
   {
     "id": 1,
-    "title": "Abs beginner",
-    "last_time": 1694355479597,
-    "level": 1,
-    "workouts": [1, 2, 3]
+    "title": "De manhã",
+    "last_time": 0,
+    "level": 2,
+    "workouts": [1, 2, 3, 1, 2, 3, 1, 2, 3, 5, 5, 5,]
   },
   {
     "id": 2,
-    "title": "Abs advanced",
-    "last_time": 1694355478597,
-    "level": 3,
-    "workouts": [1, 2, 3, 4]
+    "title": "De tarde",
+    "last_time": 0,
+    "level": 2,
+    "workouts": [1, 2, 3, 1, 2, 3, 1, 2, 3, 5, 5, 5,]
   }
 ])
 
@@ -20,26 +20,44 @@ export const challenges = () => ([
 export const workouts = () => ([
   {
     "id": 1,
-    "title": "Jumping jacks",
-    "time": 20,
+    "title": "Ropes",
+    "time": 60,
     "workouts": null
   },
   {
     "id": 2,
-    "title": "Plank",
+    "title": "Left stretch",
     "time": 20,
     "workouts": null
   },
   {
     "id": 3,
-    "title": "Mountain climber",
-    "time": null,
-    "workouts": 16
+    "title": "Right stretch",
+    "time": 20,
+    "workouts": null
   },
   {
     "id": 4,
-    "title": "Russian twist",
+    "title": "Leg raises (12)",
     "time": null,
-    "workouts": 20
-  }
+    "workouts": 12
+  },
+  {
+    "id": 4,
+    "title": "Leg raises (18)",
+    "time": null,
+    "workouts": 18
+  },
+  {
+    "id": 5,
+    "title": "Abdominal crunches (12)",
+    "time": null,
+    "workouts": 12
+  },
+  {
+    "id": 6,
+    "title": "Abdominal crunches (18)",
+    "time": null,
+    "workouts": 18
+  },
 ])
