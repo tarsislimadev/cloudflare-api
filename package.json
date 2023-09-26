@@ -4,12 +4,11 @@
   "type": "module",
   "scripts": {
     "deploy": "wrangler deploy",
-    "start": "wrangler dev --remote",
-    "docker": "node ./src/docker.js"
+    "start": "wrangler dev --remote"
   },
   "devDependencies": {
     "itty-router": "^3.0.12",
-    "wrangler": "^3.0.0"
+    "wrangler": "^3.9.0"
   },
   "dependencies": {
     "@brtmvdl/backend": "^0.14.0",
