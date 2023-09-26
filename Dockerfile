@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM tmvdl/node:wrangler
 
 WORKDIR /app
 
