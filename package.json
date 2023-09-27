@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "deploy": "wrangler deploy",
-    "start": "wrangler dev --remote"
+    "start": "wrangler dev"
   },
   "devDependencies": {
     "itty-router": "^3.0.12",
