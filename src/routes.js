@@ -1,7 +1,7 @@
 import { Router } from '@brtmvdl/backend'
 import { Logger } from '@brtmvdl/logger'
 
-import { homeWorkout } from './api/home-workout/index.js'
+import * as homeWorkout from './api/home-workout/index.js'
 
 const router = new Router()
 const logger = new Logger('AppLogger')
