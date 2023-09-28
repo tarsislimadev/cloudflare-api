@@ -1,1 +1,1 @@
-npx wrangler dev
+docker-compose run app npx wrangler dev

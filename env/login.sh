@@ -1,1 +1,1 @@
-npx wrangler login
+docker-compose run app npx wrangler login
