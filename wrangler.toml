@@ -2,3 +2,10 @@ name = "api"
 main = "src/app.js"
 compatibility_date = "2023-08-14"
 node_compat = true
+
+send_metrics = false
+
+[dev]
+ip = "0.0.0.0"
+port = 80
+local_protocol = "http"
