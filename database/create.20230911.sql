@@ -1,23 +1,23 @@
 
-DROP TABLE public.application;
+DROP TABLE application;
 
-CREATE TABLE public.application (
+CREATE TABLE application (
   "id" varchar NOT NULL DEFAULT gen_random_uuid(),
   "name" varchar NOT NULL,
   "created_at" varchar NOT NULL DEFAULT now()
 );
 
-DROP TABLE public.person;
+DROP TABLE person;
 
-CREATE TABLE public.person (
+CREATE TABLE person (
   "id" varchar NOT NULL DEFAULT gen_random_uuid(),
   "name" varchar NULL,
   "created_at" varchar NOT NULL DEFAULT now()
 );
 
-DROP TABLE public.email;
+DROP TABLE email;
 
-CREATE TABLE public.email (
+CREATE TABLE email (
   "id" varchar NOT NULL DEFAULT gen_random_uuid(),
   "text" varchar NOT NULL,
   "person_id" varchar NOT NULL,
@@ -25,9 +25,9 @@ CREATE TABLE public.email (
   "created_at" varchar NOT NULL DEFAULT now()
 );
 
-DROP TABLE public.password;
+DROP TABLE password;
 
-CREATE TABLE public.password (
+CREATE TABLE password (
   "id" varchar NOT NULL DEFAULT gen_random_uuid(),
   "text" varchar NOT NULL,
   "email_id" varchar NOT NULL,
