@@ -1,7 +1,15 @@
 import { Router } from '@brtmvdl/backend'
 import { Logger } from '@brtmvdl/logger'
+import { Client } from 'pg'
 
 import * as homeWorkout from './api/home-workout/index.js'
+const client = new Client({
+  host: 'silly.db.elephantsql.com',
+  database: 'waaiapwa',
+  user: 'waaiapwa',
+  password: process.env.psql_password,
+  port: 5432,
+})
 
 const router = new Router()
 const logger = new Logger('AppLogger')
@@ -25,9 +33,9 @@ router.get('/api/home-workout/challenges', (_, res) => {
 router.get('/api/home-workout/workouts', (_, res) => res.setJSON({ list: homeWorkout.workouts() }))
 
 router.get('/api/namazon/products/list', async (_, res) => {
-  const list = await Promise.resolve([])
+  const { rows: list } = await client.query('SELECT * FROM product')
 
-  return res.setJSON({ id: Date.now(), endpoint: '/api/namazon/products/list', list })
+  return res.setJSON({ id: Date.now(), list })
 })
 
 router.post('/api/namazon/addresses/list', (_, res) => res.setJSON({ id: Date.now(), endpoint: '/api/namazon/addresses/list' }))
