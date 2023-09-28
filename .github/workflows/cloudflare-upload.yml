@@ -19,7 +19,7 @@ jobs:
           node-version: '18'
 
       - name: NPM install
-        run: npm ci
+        run: npm i
 
       - name: Cloudflare configuration
         run: echo "CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}" > .env
