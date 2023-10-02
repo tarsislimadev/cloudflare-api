@@ -4,4 +4,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD npm run docker
+CMD npm start
