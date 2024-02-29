@@ -1,13 +1,15 @@
-import { CloudflareRequest, CloudflareResponse } from '@brtmvdl/backend/cloudflare'
-import app from './routes.js'
+import { EventEmmiter } from 'events'
+
+const ee = new EventEmmiter()
+
+setInterval(() => ee.emit('datetime', new Date()), 100)
+
+const config = { datetime: 0 }
+
+ee.addEventListener('datetime', (datetime = new Date()) => config.datetime = datetime.toLocaleString())
 
 export default {
   async fetch(request) {
-    const req = new CloudflareRequest(request)
-    const res = new CloudflareResponse(req)
-    await req.parseProperties()
-
-    const response = await app.run(req, res)
-    return response.getResponse()
+    return new Response(`datetime: ${config.datetime}`, { headers, status: 200 })
   }
 }
