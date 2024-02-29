@@ -1,6 +1,6 @@
-import { EventEmmiter } from 'events'
+import { EventEmitter } from 'events'
 
-const ee = new EventEmmiter()
+const ee = new EventEmitter()
 
 setInterval(() => ee.emit('datetime', new Date()), 100)
 
