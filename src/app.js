@@ -10,6 +10,6 @@ ee.addEventListener('datetime', (datetime = new Date()) => config.datetime = dat
 
 export default {
   async fetch(request) {
-    return new Response(`datetime: ${config.datetime}`, { headers, status: 200 })
+    return new Response(`datetime: ${config.datetime}`)
   }
 }
